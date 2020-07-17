@@ -3,22 +3,35 @@
       <div class="Special-holiday">
         <h2>特惠度假</h2>
         <div class="shtitle-box">
-          <span class="shtitle-one">当季热门度假</span>
-          <span class="shtitle-two">当季特惠度假</span>
+          <span v-bind:class="{shtitle:flag==1}" v-on:click="changeone()">当季热门度假</span>
+          <span v-bind:class="{shtitle:flag==2}" v-on:click="changetwo()">当季特惠度假</span>
         </div>
-        <ul class="sh-con">
-          <li>
+        <ul class="sh-con" v-show="flag==1">
+          <li v-for="(item,index) in holidaylist1">
             <a href="#">
               <div class="img-box">
-                <img src="../../assets/images/sh-1.jpg" alt="">
+                <img :src="item.imgsrc" alt="">
                 <!--图片上文字-->
                 <span>
-                  <i>广州-丽江</i>
-                  <b>3天跟团游</b>
+                  <i>{{item.imgi}}</i>
+                  <b>{{item.imgb}}</b>
                 </span>
               </div>
-              <p>含往返飞机票+2晚住宿</p>
-              <i>￥ 2070</i>
+              <p>{{item.con}}</p>
+              <i>{{item.price}}</i>
+            </a>
+          </li>
+        </ul>
+
+        <ul class="sh-con" v-show="flag==2">
+          <li v-for="(item,index) in holidaylist2">
+            <a href="#">
+              <div class="img-box">
+                <img :src="item.imgsrc" alt="">
+              </div>
+              <p>{{item.con}}</p>
+              <b>{{item.conn}}</b>
+              <i>{{item.price}}<s>起</s></i>
             </a>
           </li>
         </ul>
@@ -35,7 +48,36 @@
 
 <script>
     export default {
-        name: "special-holiday"
+        name: "special-holiday",
+      data(){
+          return{
+            flag:1,
+            holidaylist1:[],
+            holidaylist2:[],
+          }
+      },
+      mounted() {
+        this.$http.get('./data/index.json')
+          .then((response)=> {
+            console.log(response);
+            this.holidaylist1=response.data.holidaylist1;
+            this.holidaylist2=response.data.holidaylist2;
+          })
+          .catch(function (error) {
+            console.log(error);
+          })
+          .then(function () {
+            // always executed
+          });
+      },
+      methods:{
+        changeone(){
+          this.flag=1
+        },
+        changetwo(){
+          this.flag=2
+        }
+      }
     }
 </script>
 
@@ -60,7 +102,7 @@
     margin: 10px 0 5px;
   }
 
-  .shtitle-one,.shtitle-two{
+  .shtitle-box>span{
     display: inline-block;
     width: 30%;
     height: 30px;
@@ -70,16 +112,13 @@
     margin-right: 5px;
     border-radius: 3px;
     border: 1px solid #d7d7d7;
-  }
-
-  .shtitle-one{
-    background-color: #18c0c8;
-    color: #fff;
-  }
-
-  .shtitle-two{
     background-color: #fff;
     color: #707070;
+  }
+
+  .shtitle-box>.shtitle{
+    background-color: #18c0c8;
+    color: #fff;
   }
 
   .sh-con{
@@ -91,6 +130,8 @@
   .sh-con li{
     width: 49%;
     float: left;
+    margin-top: 5px;
+    margin-bottom: 5px;
     background-color: #FFFFFF;
   }
 
@@ -105,6 +146,9 @@
 
   .sh-con .img-box{
     position: relative;
+    height: 100px;
+    border-radius: 4px;
+    overflow: hidden;
   }
 
   .sh-con li img{
@@ -147,6 +191,11 @@
     font-size: 0.85em;
     line-height: 1.7em;
     padding-left: 5px;
+    width: 100%;
+    height: 1.7em;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow:ellipsis;
   }
 
   .sh-con li>a>i{
@@ -157,6 +206,27 @@
     font-style: normal;
     font-size: 1em;
     padding-left: 5px;
+  }
+
+  .sh-con li>a>i>s{
+    font-size: 0.7em;
+    font-weight: normal;
+    text-decoration: none;
+  }
+
+  .sh-con li>a>b{
+    display: block;
+    width: 100%;
+    height: 1.6em;
+    line-height: 1.6em;
+    color: #707070;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 0.8em;
+    padding-left: 5px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow:ellipsis;
   }
 
   .sh-more{

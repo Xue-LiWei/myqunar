@@ -1,0 +1,151 @@
+{
+  "holidaylist1": [
+    {
+      "imgsrc": "./data/assets/images/sh-1.jpg",
+      "imgi": "广州-丽江",
+      "imgb": "3天跟团游",
+      "con": "含往返飞机票+2晚住宿",
+      "price": "￥ 3722"
+    },
+    {
+      "imgsrc": "./data/assets/images/sh-2.jpg",
+      "imgi": "广州-三亚",
+      "imgb": "5天跟团游",
+      "con": "含往返飞机票(含税)+4晚住宿",
+      "price": "￥ 2250"
+    },
+    {
+      "imgsrc": "./data/assets/images/sh-3.jpg",
+      "imgi": "广州-泰国",
+      "imgb": "6天跟团游",
+      "con": "含往返飞机票+5晚住宿",
+      "price": "￥ 2280"
+    },
+    {
+      "imgsrc": "./data/assets/images/sh-4.jpg",
+      "imgi": "广州-青海湖",
+      "imgb": "7天跟团游",
+      "con": "含往返飞机票+6晚住宿",
+      "price": "￥ 5455"
+    }
+  ],
+
+  "holidaylist2": [
+    {
+      "imgsrc": "./data/assets/images/sh2-1.jpg",
+      "con": "广州,珠海,深圳-珠海长隆海洋王国 2天自由行",
+      "conn": "餐厅可看企鹅！珠海长隆企鹅酒店1晚双人/三人可选含餐/2日多次海洋王国/龙秀",
+      "price": "￥ 988"
+    },
+    {
+      "imgsrc": "./data/assets/images/sh2-2.jpg",
+      "con": "广州,珠海,深圳-珠海长隆海洋王国 2天自由行",
+      "conn": "餐厅可看企鹅！珠海长隆企鹅酒店1晚双人/三人可选含餐/2日多次海洋王国/龙秀",
+      "price": "￥ 1088"
+    },
+    {
+      "imgsrc": "./data/assets/images/sh2-3.jpg",
+      "con": "广州,深圳,珠海-珠海 2天自由行",
+      "conn": "珠海长隆企鹅酒店 双人/三人 珠海长隆海洋王国 多选套餐 ID782727",
+      "price": "￥ 1728"
+    },
+    {
+      "imgsrc": "./data/assets/images/sh2-4.jpg",
+      "con": "广州-清远 2天跟团游",
+      "conn": "【去哪儿优选】广州出发新银盏温泉＋天子山瀑布景区2日1晚跟团游、入住悦隆酒店",
+      "price": "￥ 228"
+    }
+  ],
+
+  "ticketlist1": [
+    {
+      "imgsrc": "./data/assets/images/st-1.jpg",
+      "con": "长隆水上乐园",
+      "conn": "全球必去的水上乐园",
+      "price": "￥ 125"
+    },
+    {
+      "imgsrc": "./data/assets/images/st-2.jpg",
+      "con": "长隆野生动物世界",
+      "conn": "奇妙的朋友与您共享欢乐时光",
+      "price": "￥ 228"
+    },
+    {
+      "imgsrc": "./data/assets/images/st-3.jpg",
+      "con": "广州长隆旅游度假区",
+      "conn": "一站式旅游度假胜地，广东必游景点",
+      "price": "￥ 55"
+    },
+    {
+      "imgsrc": "./data/assets/images/st-4.jpg",
+      "con": "深圳欢乐谷",
+      "conn": "狂欢无罪，够胆你就来",
+      "price": "￥ 109.8"
+    }
+  ],
+
+  "ticketlist2": [
+    {
+      "imgsrc": "./data/assets/images/st-3.jpg",
+      "con": "广州长隆旅游度假区",
+      "conn": "一站式旅游度假胜地，广东必游景点",
+      "price": "￥ 55"
+    },
+    {
+      "imgsrc": "./data/assets/images/st2-2.jpg",
+      "con": "古龙峡玻璃大峡谷",
+      "conn": "集合玻璃平台、栈道、索桥为的观光玻璃组合",
+      "price": "￥ 33.5"
+    },
+    {
+      "imgsrc": "./data/assets/images/st-4.jpg",
+      "con": "深圳欢乐谷",
+      "conn": "狂欢无罪，够胆你就来",
+      "price": "￥ 109.8"
+    },
+    {
+      "imgsrc": "./data/assets/images/st2-4.jpg",
+      "con": "世界之窗",
+      "conn": "全球微缩景点，精彩演绎、娱乐项目应有尽有",
+      "price": "￥ 198"
+    }
+  ],
+
+  "travellist1": [
+    {
+      "imgsrc": "./data/assets/images/t-1.jpg",
+      "con": "驾一叶扁舟，寻瓯江往事"
+    },
+    {
+      "imgsrc": "./data/assets/images/t-2.jpg",
+      "con": "不负嵊夏好时光，泗乎太安逸"
+    },
+    {
+      "imgsrc": "./data/assets/images/t-3.jpg",
+      "con": "探访日本，一部家庭旅行画册"
+    },
+    {
+      "imgsrc": "./data/assets/images/t-4.jpg",
+      "con": "厦门，带娃出行与幸福同行"
+    }
+  ],
+
+  "travellist2": [
+    {
+      "imgsrc": "./data/assets/images/t2-1.jpg",
+      "con": "美帝的美，留在图里也要藏在心底"
+    },
+    {
+      "imgsrc": "./data/assets/images/t2-2.jpg",
+      "con": "在秘密花园，领略意大利风情"
+    },
+    {
+      "imgsrc": "./data/assets/images/t2-3.jpg",
+      "con": "带着相机去旅行，圆一场青海梦"
+    },
+    {
+      "imgsrc": "./data/assets/images/t2-4.jpg",
+      "con": "陪你去三亚，陪你去天涯海角"
+    }
+  ]
+}

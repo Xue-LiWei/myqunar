@@ -8,16 +8,27 @@
         旅游攻略
       </h2>
       <div class="traveltitle-box">
-        <span class="traveltitle-one">趣味亲子游</span>
-        <span class="traveltitle-two">旅拍也要出大片</span>
+        <span v-bind:class="{traveltitle:flag==1}" v-on:click="changeone()">趣味亲子游</span>
+        <span v-bind:class="{traveltitle:flag==2}" v-on:click="changetwo()">旅拍也要出大片</span>
       </div>
-      <ul class="travel-con">
-        <li>
+      <ul class="travel-con" v-show="flag==1">
+        <li v-for="(item,index) in travellist1">
           <a href="#">
             <div class="img-box">
-              <img src="../../assets/images/t-1.jpg" alt="">
+              <img :src="item.imgsrc" alt="">
             </div>
-            <p>驾一叶扁舟，寻瓯江往事</p>
+            <p>{{item.con}}</p>
+          </a>
+        </li>
+      </ul>
+
+      <ul class="travel-con" v-show="flag==2">
+        <li v-for="(item,index) in travellist2">
+          <a href="#">
+            <div class="img-box">
+              <img :src="item.imgsrc" alt="">
+            </div>
+            <p>{{item.con}}</p>
           </a>
         </li>
       </ul>
@@ -34,7 +45,36 @@
 
 <script>
     export default {
-        name: "travel"
+        name: "travel",
+      data(){
+        return{
+          flag:1,
+          travellist1:[],
+          travellist2:[]
+        }
+      },
+      mounted() {
+        this.$http.get('./data/index.json')
+          .then((response)=> {
+            console.log(response);
+            this.travellist1=response.data.travellist1;
+            this.travellist2=response.data.travellist2;
+          })
+          .catch(function (error) {
+            console.log(error);
+          })
+          .then(function () {
+            // always executed
+          });
+      },
+      methods:{
+        changeone(){
+          this.flag=1
+        },
+        changetwo(){
+          this.flag=2
+        }
+      }
     }
 </script>
 
@@ -71,7 +111,7 @@
     margin: 10px 0 5px;
   }
 
-  .traveltitle-one,.traveltitle-two{
+  .traveltitle-box>span{
     display: inline-block;
     width: 30%;
     height: 30px;
@@ -81,16 +121,13 @@
     margin-right: 5px;
     border-radius: 3px;
     border: 1px solid #d7d7d7;
-  }
-
-  .traveltitle-one{
-    background-color: #18c0c8;
-    color: #fff;
-  }
-
-  .traveltitle-two{
     background-color: #fff;
     color: #707070;
+  }
+
+  .traveltitle-box>.traveltitle{
+    background-color: #18c0c8;
+    color: #fff;
   }
 
   .travel-con{
@@ -102,6 +139,8 @@
   .travel-con li{
     width: 49%;
     float: left;
+    margin-top: 5px;
+    margin-bottom: 5px;
     background-color: #FFFFFF;
   }
 
@@ -116,6 +155,9 @@
 
   .travel-con .img-box{
     position: relative;
+    height: 100px;
+    border-radius: 4px;
+    overflow: hidden;
   }
 
   .travel-con li img{

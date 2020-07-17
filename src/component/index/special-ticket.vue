@@ -3,18 +3,31 @@
     <div class="Special-ticket">
       <h2>特惠门票</h2>
       <div class="sttitle-box">
-        <span class="sttitle-one">当季景点门票</span>
-        <span class="sttitle-two">特惠门票</span>
+        <span v-bind:class="{sttitle:flag==1}" v-on:click="changeone()">当季景点门票</span>
+        <span v-bind:class="{sttitle:flag==2}" v-on:click="changetwo()">特惠门票</span>
       </div>
-      <ul class="st-con">
-        <li>
+      <ul class="st-con" v-show="flag==1">
+        <li v-for="(item,index) in ticketlist1">
           <a href="#">
             <div class="img-box">
-              <img src="../../assets/images/st-1.jpg" alt="">
+              <img :src="item.imgsrc" alt="">
             </div>
-            <p>含长隆水上乐园</p>
-            <b>全球必去的水上乐园</b>
-            <i>￥ 125</i>
+            <p>{{item.con}}</p>
+            <b>{{item.conn}}</b>
+            <i>{{item.price}}</i>
+          </a>
+        </li>
+      </ul>
+
+      <ul class="st-con" v-show="flag==2">
+        <li v-for="(item,index) in ticketlist2">
+          <a href="#">
+            <div class="img-box">
+              <img :src="item.imgsrc" alt="">
+            </div>
+            <p>{{item.con}}</p>
+            <b>{{item.conn}}</b>
+            <i>{{item.price}}<s>起</s></i>
           </a>
         </li>
       </ul>
@@ -31,7 +44,36 @@
 
 <script>
     export default {
-        name: "special-ticket"
+        name: "special-ticket",
+      data(){
+        return{
+          flag:1,
+          ticketlist1:[],
+          ticketlist2:[]
+        }
+      },
+      mounted() {
+        this.$http.get('./data/index.json')
+          .then((response)=> {
+            console.log(response);
+            this.ticketlist1=response.data.ticketlist1;
+            this.ticketlist2=response.data.ticketlist2;
+          })
+          .catch(function (error) {
+            console.log(error);
+          })
+          .then(function () {
+            // always executed
+          });
+      },
+      methods:{
+        changeone(){
+          this.flag=1
+        },
+        changetwo(){
+          this.flag=2
+        }
+      }
     }
 </script>
 
@@ -56,7 +98,7 @@
     margin: 10px 0 5px;
   }
 
-  .sttitle-one,.sttitle-two{
+  .sttitle-box>span{
     display: inline-block;
     width: 30%;
     height: 30px;
@@ -66,16 +108,13 @@
     margin-right: 5px;
     border-radius: 3px;
     border: 1px solid #d7d7d7;
-  }
-
-  .sttitle-one{
-    background-color: #18c0c8;
-    color: #fff;
-  }
-
-  .sttitle-two{
     background-color: #fff;
     color: #707070;
+  }
+
+  .sttitle-box>.sttitle{
+    background-color: #18c0c8;
+    color: #fff;
   }
 
   .st-con{
@@ -87,6 +126,8 @@
   .st-con li{
     width: 49%;
     float: left;
+    margin-top: 5px;
+    margin-bottom: 5px;
     background-color: #FFFFFF;
   }
 
@@ -101,6 +142,9 @@
 
   .st-con .img-box{
     position: relative;
+    height: 100px;
+    border-radius: 4px;
+    overflow: hidden;
   }
 
   .st-con li img{
@@ -123,6 +167,9 @@
     font-weight: normal;
     font-size: 0.8em;
     padding-left: 5px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow:ellipsis;
   }
 
   .st-con li>a>i{
@@ -131,6 +178,12 @@
     font-style: normal;
     font-size: 1em;
     padding-left: 5px;
+  }
+
+  .st-con li>a>i>s{
+    font-size: 0.7em;
+    font-weight: normal;
+    text-decoration: none;
   }
 
   .st-more{

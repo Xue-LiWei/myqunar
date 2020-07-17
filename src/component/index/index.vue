@@ -11,6 +11,8 @@
       <index-Special-holiday></index-Special-holiday>
 <!--      特惠门票-->
       <index-Special-ticket></index-Special-ticket>
+<!--      轮播-->
+      <index-lunbo></index-lunbo>
 <!--      旅行攻略-->
       <index-travel></index-travel>
 <!--      footer-->
@@ -25,7 +27,8 @@
     import specialholiday from './special-holiday';
     import specialticket from './special-ticket';
     import travel from "./travel";
-    import footer from "./footer";
+    import footer from "./ifooter";
+    import lunbo from "./lunbo";
     export default {
       name: "index",
       components:{
@@ -35,8 +38,8 @@
         'index-Special-holiday':specialholiday,
         'index-Special-ticket':specialticket,
         'index-travel':travel,
-        'index-footer':footer
-
+        'index-footer':footer,
+        'index-lunbo':lunbo
       }
     }
 </script>

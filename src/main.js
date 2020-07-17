@@ -11,6 +11,10 @@ Vue.use(VueRouter)
 import Mint from 'mint-ui';
 Vue.use(Mint);
 
+//axios
+import axios from 'axios';
+Vue.prototype.$http = axios;
+
 new Vue({
   el: '#app',
   render: h => h(App),

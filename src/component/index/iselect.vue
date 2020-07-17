@@ -6,7 +6,7 @@
           </span>搜索景点门票
     </div>
     <div class="download">
-      <span><img src="../../assets/images/download.png" alt=""></span>
+      <span><img src="../../assets/images/download.gif" alt=""></span>
       <i>下载App</i>
     </div>
   </div>
@@ -61,15 +61,16 @@
 
   .download span{
     display: block;
-    width: 20px;
-    height: 20px;
-    margin: 3px auto 0;
+    width: 24px;
+    height: 24px;
+    margin: 0 auto;
     border-radius: 50%;
   }
 
   .download span img{
-    width: 20px;
-    height: 20px;
+    width: 23px;
+    height: 23px;
+    margin-bottom: 3px;
   }
 
   .download i{
