@@ -1,7 +1,7 @@
 import VueRouter from 'vue-router';
 
 import index from '../component/index/index';
-import book from  '../component/index/book';
+import bookunlogin from '../component/book/book-unlogin';
 
 export default new VueRouter({
   routes:[
@@ -11,7 +11,7 @@ export default new VueRouter({
     },
     {
       path:'/book',
-      component:book
+      component:bookunlogin
     }
   ]
 })

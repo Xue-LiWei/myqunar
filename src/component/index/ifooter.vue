@@ -21,7 +21,7 @@
 
 <script>
     export default {
-        name: "ifooter"
+        name: "ifooter",
     }
 </script>
 

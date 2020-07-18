@@ -15,8 +15,14 @@ Vue.use(Mint);
 import axios from 'axios';
 Vue.prototype.$http = axios;
 
+//公共数据
+import Vuex from 'vuex'
+Vue.use(Vuex);
+import store from './js/store'
+
 new Vue({
   el: '#app',
   render: h => h(App),
-  router
+  router,
+  store
 })

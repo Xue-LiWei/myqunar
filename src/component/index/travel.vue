@@ -56,7 +56,7 @@
       mounted() {
         this.$http.get('./data/index.json')
           .then((response)=> {
-            console.log(response);
+            // console.log(response);
             this.travellist1=response.data.travellist1;
             this.travellist2=response.data.travellist2;
           })
