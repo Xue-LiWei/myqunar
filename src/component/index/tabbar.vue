@@ -7,7 +7,7 @@
           <img slot="icon" src="../../assets/images/tab1.png" v-if="flag==true">
           <img slot="icon" src="../../assets/images/tab01.png" v-if="flag==false">
           <span v-if="flag==true">首页</span>
-          <span v-if="flag==false" @click="totop()">回到顶部</span>
+          <span v-if="flag==false" @click="totop()">回顶部</span>
         </mt-tab-item>
       </router-link>
 
