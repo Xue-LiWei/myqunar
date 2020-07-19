@@ -7,6 +7,8 @@ import cservice from "../component/cservice/cservice";
 import productask from "../component/cservice/productask";
 import booksevice from "../component/cservice/booksevice";
 
+import mine from "../component/mine/mine";
+
 export default new VueRouter({
   routes:[
     {
@@ -34,6 +36,10 @@ export default new VueRouter({
           redirect:'/productask'
         }
       ]
+    },
+    {
+      path: '/mine',
+      component: mine
     }
   ]
 })

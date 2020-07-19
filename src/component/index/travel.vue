@@ -13,23 +13,19 @@
       </div>
       <ul class="travel-con" v-show="flag==1">
         <li v-for="(item,index) in travellist1">
-          <a href="#">
             <div class="img-box">
               <img :src="item.imgsrc" alt="">
             </div>
             <p>{{item.con}}</p>
-          </a>
         </li>
       </ul>
 
       <ul class="travel-con" v-show="flag==2">
         <li v-for="(item,index) in travellist2">
-          <a href="#">
             <div class="img-box">
               <img :src="item.imgsrc" alt="">
             </div>
             <p>{{item.con}}</p>
-          </a>
         </li>
       </ul>
       <!--        更多-->
@@ -148,11 +144,6 @@
     margin-left: 2%;
   }
 
-  .travel-con li a{
-    display: block;
-    text-decoration: none;
-  }
-
   .travel-con .img-box{
     position: relative;
     height: 100px;
@@ -165,7 +156,7 @@
     display: block;
   }
 
-  .travel-con li>a>p{
+  .travel-con li>p{
     color: #000;
     font-size: 0.85em;
     line-height: 1.7em;

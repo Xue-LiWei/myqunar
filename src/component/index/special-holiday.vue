@@ -8,7 +8,6 @@
         </div>
         <ul class="sh-con" v-show="flag==1">
           <li v-for="(item,index) in holidaylist1">
-            <a href="#">
               <div class="img-box">
                 <img :src="item.imgsrc" alt="">
                 <!--图片上文字-->
@@ -19,20 +18,17 @@
               </div>
               <p>{{item.con}}</p>
               <i>{{item.price}}</i>
-            </a>
           </li>
         </ul>
 
         <ul class="sh-con" v-show="flag==2">
           <li v-for="(item,index) in holidaylist2">
-            <a href="#">
               <div class="img-box">
                 <img :src="item.imgsrc" alt="">
               </div>
               <p>{{item.con}}</p>
               <b>{{item.conn}}</b>
               <i>{{item.price}}<s>起</s></i>
-            </a>
           </li>
         </ul>
 <!--        更多-->
@@ -139,11 +135,6 @@
     margin-left: 2%;
   }
 
-  .sh-con li a{
-    display: block;
-    text-decoration: none;
-  }
-
   .sh-con .img-box{
     position: relative;
     height: 100px;
@@ -186,7 +177,7 @@
     margin: 5px 0 2px;
   }
 
-  .sh-con li>a>p{
+  .sh-con li>p{
     color: #000;
     font-size: 0.85em;
     line-height: 1.7em;
@@ -198,7 +189,7 @@
     text-overflow:ellipsis;
   }
 
-  .sh-con li>a>i{
+  .sh-con li>i{
     display: block;
     width: 100%;
     color: #ff7400;
@@ -214,7 +205,7 @@
     text-decoration: none;
   }
 
-  .sh-con li>a>b{
+  .sh-con li>b{
     display: block;
     width: 100%;
     height: 1.6em;
