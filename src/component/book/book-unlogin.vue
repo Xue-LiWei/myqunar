@@ -11,10 +11,10 @@
               <div class="title">本地订单</div>
               <div class="ico-box">
                 <i class="up">
-                  <img src="../../assets/images/up.png" alt=""  v-show="flag==false">
+                  <img src="../../assets/images/up.png" alt=""  v-show="flag==true">
                 </i>
                 <i class="down">
-                  <img src="../../assets/images/down.png" alt=""  v-show="flag==true">
+                  <img src="../../assets/images/down.png" alt=""  v-show="flag==false">
                 </i>
               </div>
             </div>
@@ -25,14 +25,19 @@
         <div class="unlogin">
           <img src="../../assets/images/order_login.png" alt="">
           <p class="tips">您还没有本地订单<br>快登录查看在线订单吧</p>
-          <div class="login">登录</div>
+          <div class="login">
+            <router-link to="/login">
+              登录
+            </router-link>
+          </div>
         </div>
 
 <!--        本地订单下拉部分-->
-        <div class="conn" v-show="flag==false">
-          <ul>
-            <li v-bind:class="{addli:index==msg}" v-for="(item,index) in connlist" @click="getindex(index)">{{item}}</li>
-          </ul>
+        <ul class="conn" v-bind:class="{add:flag}">
+          <li v-bind:class="{addli:index==msg}" v-for="(item,index) in connlist" @click="getindex(index)">{{item}}</li>
+        </ul>
+        <div class="mask" v-if="flag">
+
         </div>
       </div>
 </template>
@@ -42,7 +47,7 @@
         name: "book-unlogin",
       data(){
           return{
-            flag:true,
+            flag:false,
             msg:0,
             connlist:["全部","机票","酒店住宿","汽车票·船票","火车票","门票","美食团购","专车·租车"],
           }
@@ -65,6 +70,11 @@
 </script>
 
 <style scoped>
+  .login a{
+    text-decoration: none;
+    color: #fff;
+  }
+
   .book{
     width: 100%;
     height: 100vh;
@@ -77,6 +87,8 @@
     width: 100%;
     height: 40px;
     position: fixed;
+    border-bottom: 1px solid #eee;
+    z-index: 99;
     background-color: #fff;
   }
 
@@ -170,24 +182,32 @@
     font-size: 1em;
   }
 
-  .conn{
+  .mask{
     position: absolute;
     width: 100%;
     height: 100vh;
     left: 0;
     top: 41px;
     background-color: rgba(0,0,0,0.3);
-    z-index: 999;
+    z-index: 8;
   }
 
-  .conn ul{
+  .conn{
     width: 100%;
     overflow: hidden;
-    padding: 10px 3%;
+    padding: 15px 3%;
     background-color: #fff;
+    position: absolute;
+    top: -200px;
+    transition: top 0.5s;
+    z-index: 9;
   }
 
-  .conn ul li{
+  .add{
+    top: 40px;
+  }
+
+  .conn li{
     width: 20%;
     height: 30px;
     margin-left: 8%;
@@ -201,7 +221,7 @@
     font-size: 0.8em;
   }
 
-  .conn ul .addli{
+  .conn .addli{
     background-color: #18c0c8;
     border: 1px solid #18c0c8;
     color: #fff;

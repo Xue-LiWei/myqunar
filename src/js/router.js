@@ -9,6 +9,8 @@ import booksevice from "../component/cservice/booksevice";
 
 import mine from "../component/mine/mine";
 
+import login from "../component/login/login";
+
 export default new VueRouter({
   routes:[
     {
@@ -40,6 +42,10 @@ export default new VueRouter({
     {
       path: '/mine',
       component: mine
+    },
+    {
+      path: '/login',
+      component: login
     }
   ]
 })
