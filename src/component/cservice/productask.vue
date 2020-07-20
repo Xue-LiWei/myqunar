@@ -87,7 +87,7 @@
 
     <div class="tologin">
       <p>点击登录，享受更多服务</p>
-      <div class="login">登录</div>
+      <div class="login"><router-link to="/login">登录</router-link></div>
     </div>
   </div>
 
@@ -200,5 +200,10 @@
     color: #18c0c8;
     background-color: #fff;
     margin: 0 auto;
+  }
+
+  .login a{
+    text-decoration: none;
+    color: #00afc7;
   }
 </style>

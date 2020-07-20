@@ -208,9 +208,9 @@
   }
 
   .conn li{
-    width: 20%;
+    width: 25%;
     height: 30px;
-    margin-left: 8%;
+    margin-left: 4%;
     margin-bottom: 10px;
     border: 1px solid #666;
     border-radius: 3px;

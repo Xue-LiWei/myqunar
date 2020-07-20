@@ -149,6 +149,6 @@
     width: 100%;
     margin: 3px auto 0;
     font-style: normal;
-    font-size: 13px;
+    font-size: 11px;
   }
 </style>

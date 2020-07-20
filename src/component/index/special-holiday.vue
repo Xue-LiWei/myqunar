@@ -199,7 +199,7 @@
     padding-left: 5px;
   }
 
-  .sh-con li>a>i>s{
+  .sh-con li>i>s{
     font-size: 0.7em;
     font-weight: normal;
     text-decoration: none;

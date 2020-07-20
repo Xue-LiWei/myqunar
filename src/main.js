@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import App from './App.vue'
 import '../node_modules/mint-ui/lib/style.css'
+import './css/cssreset.css'
 
 //路由
 import VueRouter from 'vue-router'
