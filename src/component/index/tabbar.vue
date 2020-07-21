@@ -49,12 +49,16 @@
       },
       methods:{
         handleScroll() {
-          let scrolltop = document.documentElement.scrollTop || document.body.scrollTop;
-          scrolltop < 500 ? (this.flag = true) : (this.flag = false);
+          $(window).scroll( () => {
+            if($(window).scrollTop()>$(window).height()){
+              this.flag = false;
+            }else{
+              this.flag = true;
+            }
+          })
         },
         totop(){
-          let top = document.documentElement || document.body;
-          top.scrollTop='0px';
+          $('html,body').animate({'scrollTop':'0px'});
         }
       }
     }
