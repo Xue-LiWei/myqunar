@@ -11,6 +11,7 @@ import mine from "../component/mine/mine";
 
 import login from "../component/login/login";
 import register from "../component/login/register";
+import thedetails from "../component/details/thedetails";
 
 export default new VueRouter({
   routes:[
@@ -51,6 +52,10 @@ export default new VueRouter({
     {
       path: '/register',
       component: register
+    },
+    {
+      path: '/thedetails',
+      component: thedetails
     }
   ]
 })

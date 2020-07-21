@@ -13,19 +13,23 @@
       </div>
       <ul class="travel-con" v-show="flag==1">
         <li v-for="(item,index) in travellist1">
+          <router-link to="/thedetails">
             <div class="img-box">
               <img :src="item.imgsrc" alt="">
             </div>
             <p>{{item.con}}</p>
+          </router-link>
         </li>
       </ul>
 
       <ul class="travel-con" v-show="flag==2">
         <li v-for="(item,index) in travellist2">
+          <router-link to="/thedetails">
             <div class="img-box">
               <img :src="item.imgsrc" alt="">
             </div>
             <p>{{item.con}}</p>
+          </router-link>
         </li>
       </ul>
       <!--        更多-->
@@ -140,6 +144,10 @@
     background-color: #FFFFFF;
   }
 
+  .travel-con li>a{
+    text-decoration: none;
+  }
+
   .travel-con li:nth-of-type(2n){
     margin-left: 2%;
   }
@@ -156,7 +164,7 @@
     display: block;
   }
 
-  .travel-con li>p{
+  .travel-con li>a>p{
     color: #000;
     font-size: 0.85em;
     line-height: 1.7em;

@@ -8,23 +8,27 @@
       </div>
       <ul class="st-con" v-show="flag==1">
         <li v-for="(item,index) in ticketlist1">
+          <router-link to="/thedetails">
             <div class="img-box">
               <img :src="item.imgsrc" alt="">
             </div>
             <p>{{item.con}}</p>
             <b>{{item.conn}}</b>
             <i>{{item.price}}</i>
+          </router-link>
         </li>
       </ul>
 
       <ul class="st-con" v-show="flag==2">
         <li v-for="(item,index) in ticketlist2">
+          <router-link to="/thedetails">
             <div class="img-box">
               <img :src="item.imgsrc" alt="">
             </div>
             <p>{{item.con}}</p>
             <b>{{item.conn}}</b>
             <i>{{item.price}}<s>起</s></i>
+          </router-link>
         </li>
       </ul>
       <!--        更多-->
@@ -127,6 +131,10 @@
     background-color: #FFFFFF;
   }
 
+  .st-con li>a{
+    text-decoration: none;
+  }
+
   .st-con li:nth-of-type(2n){
     margin-left: 2%;
   }
@@ -143,14 +151,14 @@
     display: block;
   }
 
-  .st-con li>p{
+  .st-con li>a>p{
     color: #000;
     font-size: 0.85em;
     line-height: 1.7em;
     padding-left: 5px;
   }
 
-  .st-con li>b{
+  .st-con li>a>b{
     display: block;
     width: 100%;
     color: #707070;
@@ -163,7 +171,7 @@
     text-overflow:ellipsis;
   }
 
-  .st-con li>i{
+  .st-con li>a>i{
     color: #ff7400;
     font-weight: bold;
     font-style: normal;
@@ -171,7 +179,7 @@
     padding-left: 5px;
   }
 
-  .st-con li>i>s{
+  .st-con li>a>i>s{
     font-size: 0.7em;
     font-weight: normal;
     text-decoration: none;
