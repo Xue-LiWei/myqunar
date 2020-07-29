@@ -50,7 +50,9 @@
       methods:{
         handleScroll() {
           $(window).scroll( () => {
-            if($(window).scrollTop()>$(window).height()){
+            // console.log(this.$store.state.gettop);
+            // console.log($(window).scrollTop());
+            if($(window).scrollTop()>this.$store.state.gettop){
               this.flag = false;
             }else{
               this.flag = true;

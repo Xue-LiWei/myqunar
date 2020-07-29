@@ -22,6 +22,11 @@
 <script>
     export default {
         name: "ifooter",
+      mounted() {
+          setTimeout(()=>{
+            this.$store.commit('gettop',$('.ifooter').offset().top);
+          },100);
+      }
     }
 </script>
 
